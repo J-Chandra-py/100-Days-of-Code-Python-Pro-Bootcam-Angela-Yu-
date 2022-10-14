@@ -31,33 +31,44 @@ scissors = '''
 
 hand = [rock, paper, scissors]
 
-user_value = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors.)"))
-user_choice = hand[user_value]
-print(user_choice)
+user_choice = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors.)"))
+print(hand[user_choice])
 
 print("Computer chose:")
-computer_choice = random.choice(hand)
-print(computer_choice)
+computer_choice = random.randint(0,2)
+print(hand[computer_choice])
 
-if user_choice == rock:
-  if computer_choice == scissors:
-    print("You win")
-  elif computer_choice == paper:
-    print("You lose")
-  else:
-    print("Draw")
+# if user_choice == rock:
+#   if computer_choice == scissors:
+#     print("You win")
+#   elif computer_choice == paper:
+#     print("You lose")
+#   else:
+#     print("Draw")
 
-elif user_choice == paper:
-  if computer_choice == rock:
-    print("You win")
-  elif computer_choice == scissors:
-    print("You lose")
-  else:
-    print("Draw")
-else:
-  if computer_choice == paper:
-    print("You win")
-  elif computer_choice == rock:
-    print("You lose")
-  else:
-    print("Draw")
+# elif user_choice == paper:
+#   if computer_choice == rock:
+#     print("You win")
+#   elif computer_choice == scissors:
+#     print("You lose")
+#   else:
+#     print("Draw")
+# else:
+#   if computer_choice == paper:
+#     print("You win")
+#   elif computer_choice == rock:
+#     print("You lose")
+#   else:
+#     print("Draw")
+
+if user_choice == 0 and computer_choice == 2:
+  print("You win")
+elif user_choice == 2 and computer_choice == 0:
+  print("You lose")
+elif computer_choice > user_choice:
+  print("You lose")
+elif user_choice > computer_choice:
+  print("You win")
+elif computer_choice == user_choice:
+  print("It's a draw")
+  
